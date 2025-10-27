@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- 🧠 SEO de base -->
+  <title>Achetez du Vide – Idée Cadeau Originale pour Black Friday, Noël, etc.</title>
+  <meta name="description" content="Offrez du vide pour 5€. Une idée cadeau drôle et minimaliste pour le Black Friday, Noël, Pâques ou tout autre événement. Parce que le rien, c’est tout.">
+  <meta name="keywords" content="cadeau vide, idée cadeau drôle, black friday, noël, pâques, humour, minimalisme, achetez du vide">
+  <meta name="author" content="Amaury Adam">
+
+  <!-- 🔗 Open Graph (partages réseaux sociaux) -->
+  <meta property="og:title" content="Achetez du Vide – Cadeau Original à 5€">
+  <meta property="og:description" content="Offrez du vide, un concept absurde et génial à 5€. Idéal pour le Black Friday, Noël ou toute occasion.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://achetezduvide.vercel.app">
+  <meta property="og:image" content="https://achetezduvide.vercel.app/vide.jpg">
+
+  <!-- 🧭 SEO caché (contenu contextuel) -->
+  <div style="position:absolute; left:-9999px;">
+    Achetez du vide – le cadeau parfait pour le Black Friday,Halloween, Noël, Pâques, la Saint-Valentin ou un anniversaire.
+    Offrez rien, vraiment rien, mais avec style.
+  </div>
+
+  <!-- 🕓 Script pour actualiser automatiquement le titre/description selon la saison -->
+  <script>
+    const now = new Date();
+    const month = now.getMonth();
+    let event = "";
+
+    if (month === 9) event = "Halloween 🎃";
+    else if (month === 10) event = "Black Friday 💸";
+    else if (month === 11 || month === 0) event = "Noël 🎄";
+    else if (month === 0 || month === 1) event = "Saint Valentin";.
+
+    else if (month === 3) event = "Pâques 🐣";
+    else if (month === 4) event = "Fête des Mères";
+    else if (month === 5) event = "Fête des Pères";
+
+    if (event) {
+      document.title = `Achetez du Vide – Idée Cadeau ${event}`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc)
+        metaDesc.setAttribute(
+          "content",
+          `Offrez du vide pour 5€. Un cadeau ${event} drôle et minimaliste.`
+        );
+    }
+  </script>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      border: 2px solid black;
+      background: none;
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="acheter()">Achetez du vide – 5€</button>
+
+  <script>
+    function acheter() {
+      alert("Prochaine étape : paiement sécurisé à 5€ 💳");
+      // Ici, tu intégreras Stripe ou autre solution de paiement
+    }
+  </script>
+</body>
+</html>
+
