@@ -1,7 +1,6 @@
 {
   "name": "achetez-du-vide",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^5.1.0",
     "stripe": "^19.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aphanizomenon/acheter-du-vide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aphanizomenon/acheter-du-vide/issues"
+  },
+  "homepage": "https://github.com/Aphanizomenon/acheter-du-vide#readme",
+  "description": ""
 }
