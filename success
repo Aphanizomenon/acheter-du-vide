@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci pour votre achat</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    h2 {
+      color: #0070f3;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Merci d’avoir acheté du vide 😄</h1>
+    <p>Votre vide a été expédié immédiatement dans l’éther cosmique.</p>
+  <h2 id="event-message"></h2>
+
+  <script>
+    const messageElement = document.getElementById("event-message");
+
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    let event = "journée";
+    
+    if (month === 12 && day >= 20) event = "Noël 🎄";
+    else if (month === 1 && day <= 10) event = "Nouvel An";
+    else if (month === 2 && day >= 1 && day <= 15) event = "Saint-Valentin";
+    else if (month === 4 && day >= 1 && day <= 5) event = "Poisson d’avril";
+    else if (month === 7 || month === 8) event = "vacances d’été";
+    else if (month === 10 && day >= 31) event = "Halloween 🎃";
+    else if (month === 10) event = "Black Friday 💸";
+    else if (month === 3 && day >= 20 && day <= 25) event = "printemps";
+
+    messageElement.textContent = `Joyeux ${event} !!!`;
+  </script>
+</body>
+</html>
+
