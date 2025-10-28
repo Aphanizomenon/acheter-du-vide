@@ -37,7 +37,7 @@
 
     let event = "journée";
     
-    if (month === 12 && day >= 20) event = "Noël 🎄";
+    if (month === 12 && day >= 26) event = "Noël 🎄";
     else if (month === 1 && day <= 10) event = "Nouvel An";
     else if (month === 2 && day >= 1 && day <= 15) event = "Saint-Valentin";
     else if (month === 4 && day >= 1 && day <= 5) event = "Poisson d’avril";
