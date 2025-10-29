@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci pour votre achat</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    h2 {
+      color: #0070f3;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Merci d’avoir acheté du vide 😄</h1>
+    <p>Votre vide a été expédié immédiatement dans l’éther cosmique.</p>
+    <p id="message"></p>
+
+  <script>
+    const now = new Date();
+    const month = now.getMonth();
+    let event = "la journée";
+    if (month === 9) event = "Halloween 🎃";
+    else if (month === 10) event = "le Black Friday 💸";
+    else if (month === 11 || month === 0) event = "Noël 🎄";
+    else if (month === 1) event = "la Saint Valentin ❤️";
+    else if (month === 3) event = "Pâques 🐣";
+    else if (month === 4) event = "la Fête des Mères 💐";
+    else if (month === 5) event = "la Fête des Pères 👔";
+
+    document.getElementById("message").textContent = `Joyeux ${event} !!!`;
+  </script>
+</body>
+</html>
