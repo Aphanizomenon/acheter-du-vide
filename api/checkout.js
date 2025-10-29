@@ -28,8 +28,9 @@ export default async function handler(req, res) {
         },
       ],
       mode: "payment",
-      success_url: `${req.headers.origin}/success.html`,
-      cancel_url: `${req.headers.origin}/cancel.html`,
+      success_url: "https://achetez-du-vide.vercel.app/success.html",
+      cancel_url: "https://achetez-du-vide.vercel.app/",
+
     });
 
     return res.status(200).json({ id: session.id });
