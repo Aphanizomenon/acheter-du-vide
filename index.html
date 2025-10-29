@@ -81,7 +81,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const button = document.getElementById("checkout-button");
-      const stripe = Stripe("%STRIPE_PUBLISHABLE_KEY%");
+      const stripe = Stripe("STRIPE_PUBLISHABLE_KEY");
 
       button.addEventListener("click", async (e) => {
         e.preventDefault(); // évite le rechargement de la page
