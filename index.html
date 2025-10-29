@@ -76,15 +76,31 @@
 
 <body>
   <form>
-  <button onclick="acheter()">Achetez du vide – 5€</button>
+  <button id="checkout-button" onclick="acheter()">Achetez du vide – 5€</button>
 
+  <script src="https://js.stripe.com/v3/"></script>
   <script>
+    const button = document.getElementById("checkout-button");
+    const stripe = Stripe("pk_test_51SNAKh1ID7zNU7gXpRAyX5dn7ukP2kgkdSyoVKIWSAGAnO9AKlTcdD32pU3ZPS5o3cbXrgQp2F75hAvTTGHVV56s00JCIQC8gF");
+
+    button.addEventListener("click", async () => {
+      try {
+        const response = await fetch("/api/checkout", { method: "POST" });
+        const session = await response.json();
+        if (!session.id) throw new Error("Pas d'ID de session Stripe reçu");
+        await stripe.redirectToCheckout({ sessionId: session.id });
+      } catch (err) {
+        alert("Erreur : " + err.message);
+      }
+    });
+  </script>
+  <!-- <script>
     document.getElementById('buyButton').addEventListener('click', async () => {
       const res = await fetch('/api/checkout', { method: 'POST' });
       const data = await res.json();
       window.location.href = data.url;
     });
-  </script>
+  </script> -->
   </form>
 </body>
 </html>
