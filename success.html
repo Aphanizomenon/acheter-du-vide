@@ -31,14 +31,14 @@
   <script>
     const now = new Date();
     const month = now.getMonth();
-    let event = "la journée";
+    let event = "journée";
     if (month === 9) event = "Halloween 🎃";
-    else if (month === 10) event = "le Black Friday 💸";
+    else if (month === 10) event = "Black Friday 💸";
     else if (month === 11 || month === 0) event = "Noël 🎄";
-    else if (month === 1) event = "la Saint Valentin ❤️";
+    else if (month === 1) event = "Saint Valentin ❤️";
     else if (month === 3) event = "Pâques 🐣";
-    else if (month === 4) event = "la Fête des Mères 💐";
-    else if (month === 5) event = "la Fête des Pères 👔";
+    else if (month === 4) event = "Fête des Mères 💐";
+    else if (month === 5) event = "Fête des Pères 👔";
 
     document.getElementById("message").textContent = `Joyeux ${event} !!!`;
   </script>

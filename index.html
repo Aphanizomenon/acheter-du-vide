@@ -22,11 +22,15 @@
     Offrez rien, vraiment rien, mais avec style.
   </div>
 
+  <!-- 🧩 Favicon par défaut -->
+  <link id="favicon" rel="icon" href="/favicon.png" type="image/png">
+
   <!-- 🕓 Script pour actualiser automatiquement le titre/description selon la saison -->
   <script>
     const now = new Date();
     const month = now.getMonth();
     let event = "";
+    let faviconEmoji = "";
 
     if (month === 9) event = "Halloween 🎃";
     else if (month === 10) event = "Black Friday 💸";
@@ -36,6 +40,7 @@
     else if (month === 4) event = "Fête des Mères";
     else if (month === 5) event = "Fête des Pères";
 
+    // Change le titre
     if (event) {
       document.title = `Achetez du Vide – Idée Cadeau ${event}`;
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -45,6 +50,20 @@
           `Offrez du vide pour 5€. Un cadeau ${event} drôle et minimaliste.`
         );
     }
+
+    // Génère un favicon dynamique à partir de l’emoji
+    window.addEventListener("DOMContentLoaded", () => {
+      if (faviconEmoji) {
+        const canvas = document.createElement("canvas");
+        canvas.width = 64;
+        canvas.height = 64;
+        const ctx = canvas.getContext("2d");
+        ctx.font = "48px serif";
+        ctx.fillText(faviconEmoji, 8, 48);
+        const favicon = document.getElementById("favicon");
+        favicon.href = canvas.toDataURL();
+      }
+    });
   </script>
 
   <style>
