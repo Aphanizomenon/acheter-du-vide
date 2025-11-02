@@ -8,7 +8,6 @@
   <title>Achetez du Vide – Idée Cadeau Originale pour Black Friday, Noël, etc.</title>
   <meta name="description" content="Offrez du vide pour 5€. Une idée cadeau drôle et minimaliste pour le Black Friday, Noël, Pâques ou tout autre événement. Parce que le rien, c’est tout.">
   <meta name="keywords" content="cadeau vide, idée cadeau drôle, black friday, noël, pâques, humour, minimalisme, achetez du vide">
-  <meta name="author" content="Amaury Adam">
 
   <!-- 🔗 Open Graph (partages réseaux sociaux) -->
   <meta property="og:title" content="Achetez du Vide – Cadeau Original à 5€">
@@ -49,14 +48,26 @@
   </script>
 
   <style>
-    body {
+     html, body {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      color: #000;
+    }
+    header {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    main {
+      flex-grow: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: white;
-      margin: 0;
-      font-family: sans-serif;
     }
     button {
       font-size: 1.5rem;
@@ -71,6 +82,10 @@
       background-color: #F54927;
       color: white;
     }
+    footer {
+      text-align: center;
+      padding: 1rem;
+    }
   </style>
 </head>
 
@@ -78,8 +93,9 @@
   <header>
     <p>Projet artistique minimaliste : expérience d’achat symbolique</p>
   </header>
-  <button id="checkout-button">Achetez du vide – 5€</button>
-
+<main>
+    <button id="checkout-button">Achetez du vide – 5€</button>
+  </main>
   <script src="https://js.stripe.com/v3/"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -105,8 +121,15 @@
     });
   </script>
 <footer>
-    <iframe width="380" height="38" style="border:0;" src="https://climate.stripe.com/badge/jAVYV8?theme=light&size=small&locale=fr-FR"></iframe>
-</footer>
+<footer>
+    <iframe
+      width="380"
+      height="38"
+      style="border:0;"
+      src="https://climate.stripe.com/badge/jAVYV8?theme=light&size=small&locale=fr-FR"
+      title="Stripe Climate Badge">
+    </iframe>
+  </footer></footer>
 </body>
 </html>
 
